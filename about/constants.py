@@ -11,9 +11,9 @@ COPYRIGHT = f"© {YEAR} {AUTHOR}"
 
 # Navigation
 NAV_LINKS = [
-    ("HOME", "#home"),
-    ("PROJECTS", "#projects"),
-    ("CONTACT", "#contact")
+    ("HOME", "/"),           # Redirects to same page
+    ("PROJECTS", "/projects"), # New page to be created
+    ("CONTACT", "/contact")   # New page to be created
 ]
 
 # Social Links with icons
@@ -21,3 +21,7 @@ SOCIAL_LINKS = [
     ("GITHUB", GITHUB_URL, "ico_github.png"),    # Removido /assets/
     ("LINKEDIN", LINKEDIN_URL, "ico_linkedin.png")
 ]
+
+# Layout
+MAX_WIDTH = "1200px"
+FULL_WIDTH = "100%"

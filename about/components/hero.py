@@ -1,6 +1,7 @@
 import reflex as rx
-from about.styles.colors import Color, TextColor, AltTextColor
+from about.styles.colors import AltTextColor
 from about.styles.styles import Size
+from about.constants import FULL_WIDTH
 
 def hero() -> rx.Component:
     return rx.box(
@@ -43,9 +44,9 @@ def hero() -> rx.Component:
                     margin_y=Size.DEFAULT.value,
                 ),
                 width="100%",
-                max_width="1200px",
+                max_width=FULL_WIDTH,
                 margin_x="auto",
-                padding_x=[Size.DEFAULT.value, Size.MEDIUM.value, Size.VERY_BIG.value, Size.VERY_BIG.value],
+                padding_x=[Size.DEFAULT.value, Size.MEDIUM.value, Size.HUGE.value, Size.HUGE.value],
                 align_items="center",
                 justify_content="space-between",
                 spacing="8",

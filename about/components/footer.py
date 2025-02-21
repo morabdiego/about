@@ -1,7 +1,8 @@
 import reflex as rx
 from about.styles.colors import Color, TextColor
 from about.styles.styles import Size
-from about.constants import COPYRIGHT, SOCIAL_LINKS
+from about.constants import COPYRIGHT, SOCIAL_LINKS, FULL_WIDTH
+from about.state import State
 
 def footer() -> rx.Component:
     return rx.vstack(
@@ -42,7 +43,7 @@ def footer() -> rx.Component:
                 padding_x=Size.MEDIUM.value,
             ),
             width="100%",
-            max_width="1200px",
+            max_width=FULL_WIDTH,
             margin_x="auto",
             bg=Color.BACKGROUND.value,
             border_top=f"0.25em solid {Color.BORDER.value}",
