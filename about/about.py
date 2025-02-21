@@ -1,6 +1,6 @@
 import reflex as rx
-from rxconfig import config
 from about.components.navbar import navbar
+from about.components.footer import footer
 
 class State(rx.State):
     """Estado de la aplicación."""
@@ -9,6 +9,8 @@ class State(rx.State):
 def index() -> rx.Component:
     return rx.box(
         navbar(),
+        # Aquí irá el contenido principal
+        footer(),
         width="100%"
     )
 

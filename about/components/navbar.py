@@ -1,34 +1,31 @@
 import reflex as rx
 from about.styles.colors import Color, TextColor
 from about.styles.styles import Size
+from about.constants import NAV_LINKS, AUTHOR
 
 def navbar() -> rx.Component:
     return rx.vstack(
         rx.hstack(
             rx.hstack(
-                rx.link("HOME", 
-                       href="#home",
-                       color=TextColor.PRIMARY.value,
-                       _hover={"color": TextColor.SECONDARY.value}),
-                rx.link("PROJECTS", 
-                       href="#projects",
-                       color=TextColor.PRIMARY.value,
-                       _hover={"color": TextColor.SECONDARY.value}),
-                rx.link("CONTACT", 
-                       href="#contact",
-                       color=TextColor.PRIMARY.value,
-                       _hover={"color": TextColor.SECONDARY.value}),
+                *[
+                    rx.link(
+                        text,
+                        href=url,
+                        color=TextColor.PRIMARY.value,
+                        _hover={"color": TextColor.SECONDARY.value},
+                    ) for text, url in NAV_LINKS
+                ],
                 spacing="8",
                 padding_x=Size.MEDIUM.value,
             ),
             rx.spacer(),
             rx.heading(
-                "DIEGO MORA",
+                AUTHOR,
                 color=TextColor.PRIMARY.value,
                 font_size=["1.5em", "2em", Size.BIG.value, Size.BIG.value],
                 padding_x=[Size.SMALL.value, Size.MEDIUM.value, Size.MEDIUM.value, Size.MEDIUM.value],
-                white_space="nowrap",  # Fuerza el texto en una línea
-                text_transform="uppercase",  # Asegura mayúsculas vía CSS
+                white_space="nowrap",
+                text_transform="uppercase",
             ),
             width="100%",
             max_width="1200px",
