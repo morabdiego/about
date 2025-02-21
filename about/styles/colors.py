@@ -10,3 +10,8 @@ class TextColor(Enum):
     PRIMARY = "#f0eedc"      # Color crema para texto principal
     SECONDARY = "#64b692"    # Verde para texto destacado
     ACCENT = "#64b692"       # Verde para elementos interactivos
+
+class AltTextColor(Enum):
+    PRIMARY = "#000000"      # Negro para texto alternativo principal
+    ACCENT = "#64b692"       # Verde para acentos alternativos
+    BACKGROUND = "#f0eedc"   # Crema para fondo alternativo

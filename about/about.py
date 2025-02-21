@@ -1,19 +1,16 @@
 import reflex as rx
 from about.components.navbar import navbar
 from about.components.footer import footer
-
-class State(rx.State):
-    """Estado de la aplicación."""
-    pass
+from about.components.hero import hero
+from about.state import State  # Cambiamos la importación
 
 def index() -> rx.Component:
     return rx.box(
         navbar(),
-        # Aquí irá el contenido principal
+        hero(),
         footer(),
         width="100%"
     )
 
-# Configuración de la aplicación
 app = rx.App()
 app.add_page(index)

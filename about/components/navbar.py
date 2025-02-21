@@ -2,6 +2,7 @@ import reflex as rx
 from about.styles.colors import Color, TextColor
 from about.styles.styles import Size
 from about.constants import NAV_LINKS, AUTHOR
+from about.state import State
 
 def navbar() -> rx.Component:
     return rx.vstack(
@@ -26,6 +27,12 @@ def navbar() -> rx.Component:
                 padding_x=[Size.SMALL.value, Size.MEDIUM.value, Size.MEDIUM.value, Size.MEDIUM.value],
                 white_space="nowrap",
                 text_transform="uppercase",
+            ),
+            rx.switch(  # Añadimos el switch
+                is_checked=State.show_alternative,
+                on_change=State.toggle_alternative,
+                color_scheme="green",
+                margin_left="4",
             ),
             width="100%",
             max_width="1200px",
