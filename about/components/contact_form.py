@@ -63,6 +63,8 @@ def contact_form() -> rx.Component:
                 "Send",
                 type="submit",
                 margin_top=Size.DEFAULT.value,
+                variant='soft',
+                color_scheme='gray'
                 ),
                 align="center",
             ),

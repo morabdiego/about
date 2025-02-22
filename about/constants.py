@@ -11,9 +11,8 @@ COPYRIGHT = f"© {YEAR} {AUTHOR}"
 
 # Navigation
 NAV_LINKS = [
-    ("HOME", "/"),           # Redirects to same page
-    ("PROJECTS", "/projects"), # New page to be created
-    ("CONTACT", "/contact")   # New page to be created
+    ("Home", "/"),           # Redirects to same page
+    ("Publications", "/publications"), # New page to be created
 ]
 
 # Social Links with icons

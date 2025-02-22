@@ -5,7 +5,7 @@ from about.components.markdown_text import markdown_text
 from about.constants import MAX_WIDTH
 from about.styles.colors import AltColor
 
-def projects() -> rx.Component:
+def publications() -> rx.Component:
     return rx.box(
         navbar(),
         rx.vstack(
