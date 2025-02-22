@@ -23,5 +23,6 @@ SOCIAL_LINKS = [
 ]
 
 # Layout
-MAX_WIDTH = "1200px"
+MAX_WIDTH = "1400px"
+FORM_WIDTH = "600px"
 FULL_WIDTH = "100%"

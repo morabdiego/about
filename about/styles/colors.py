@@ -1,17 +1,27 @@
 from enum import Enum
 
 class Color(Enum):
-    PRIMARY = "#000000"      # Negro para el fondo
-    BACKGROUND = "#000000"   # Negro para el fondo
-    BORDER = "#64b692"       # Verde para bordes/acentos
-    ACCENT = "#64b692"       # Verde para acentos
+    """Main color scheme - Dark theme (Navbar & Footer)"""
+    BACKGROUND = "#000000"   # Black background
+    PRIMARY = "#f0eedc"      # Cream text
+    SECONDARY = "#64b692"    # Green accents
+    ACCENT = "#64b692"       # Green interactive elements
 
 class TextColor(Enum):
-    PRIMARY = "#f0eedc"      # Color crema para texto principal
-    SECONDARY = "#64b692"    # Verde para texto destacado
-    ACCENT = "#64b692"       # Verde para elementos interactivos
+    """Text colors for dark theme"""
+    PRIMARY = "#f0eedc"      # Cream for main text
+    SECONDARY = "#64b692"    # Green for highlighted text
+    ACCENT = "#64b692"       # Green for interactive text
+
+class AltColor(Enum):
+    """Alternative color scheme - Light theme (Content sections)"""
+    BACKGROUND = "#f0eedc"   # Cream background
+    PRIMARY = "#000000"      # Black text
+    SECONDARY = "#64b692"    # Green accents
+    ACCENT = "#64b692"       # Green interactive elements
 
 class AltTextColor(Enum):
-    PRIMARY = "#000000"      # Negro para texto alternativo principal
-    ACCENT = "#64b692"       # Verde para acentos alternativos
-    BACKGROUND = "#f0eedc"   # Crema para fondo alternativo
+    """Text colors for light theme"""
+    PRIMARY = "#000000"      # Black for main text
+    SECONDARY = "#64b692"    # Green for highlighted text
+    ACCENT = "#64b692"       # Green for interactive text

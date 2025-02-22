@@ -2,8 +2,8 @@ import reflex as rx
 from about.components.navbar import navbar
 from about.components.footer import footer
 from about.components.contact_form import contact_form
-from about.styles.colors import AltTextColor
-from about.constants import FULL_WIDTH
+from about.styles.colors import AltColor
+from about.constants import FORM_WIDTH
 
 def contact() -> rx.Component:
     return rx.box(
@@ -12,12 +12,14 @@ def contact() -> rx.Component:
             rx.box(
                 contact_form(),
                 width="100%",
-                max_width=FULL_WIDTH,
+                max_width=FORM_WIDTH,
                 margin_x="auto",
-                min_height="calc(100vh - 60px - 60px)",
-            ),
+                padding=80
+                ),
             width="100%",
-            background=AltTextColor.BACKGROUND.value,
+            justify_content="center",  # Centra verticalmente
+            align_items="right",      # Centra horizontalmente
+            height="calc(100vh - 60px - 60px)",  # Altura total disponible
         ),
         footer(),
         width="100%",

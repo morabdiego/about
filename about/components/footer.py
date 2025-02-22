@@ -2,7 +2,6 @@ import reflex as rx
 from about.styles.colors import Color, TextColor
 from about.styles.styles import Size
 from about.constants import COPYRIGHT, SOCIAL_LINKS, FULL_WIDTH
-from about.state import State
 
 def footer() -> rx.Component:
     return rx.vstack(
@@ -46,7 +45,7 @@ def footer() -> rx.Component:
             max_width=FULL_WIDTH,
             margin_x="auto",
             bg=Color.BACKGROUND.value,
-            border_top=f"0.25em solid {Color.BORDER.value}",
+            border_top=f"0.25em solid {Color.ACCENT.value}",
             padding_x=[Size.DEFAULT.value, Size.MEDIUM.value, Size.HUGE.value, Size.HUGE.value],
             padding_y=Size.DEFAULT.value,
         )

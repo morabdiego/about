@@ -23,7 +23,7 @@ def navbar() -> rx.Component:
             margin_x="auto",
             bg=Color.BACKGROUND.value,
             position="sticky",
-            border_bottom=f"0.25em solid {Color.BORDER.value}",
+            border_bottom=f"0.25em solid {Color.ACCENT.value}",
             padding_x=[Size.DEFAULT.value, Size.MEDIUM.value, Size.HUGE.value, Size.HUGE.value],
             padding_y=Size.DEFAULT.value,
             z_index="999",

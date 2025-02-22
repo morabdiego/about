@@ -1,5 +1,5 @@
 import reflex as rx
-from about.styles.colors import AltTextColor
+from about.styles.colors import AltColor, AltTextColor
 from about.styles.styles import Size
 from about.constants import FULL_WIDTH
 
@@ -51,7 +51,7 @@ def hero() -> rx.Component:
                 align_items="center",
                 justify_content="space-between",
                 spacing="8",
-                background=AltTextColor.BACKGROUND.value,
+                background=AltColor.BACKGROUND.value,
                 height="calc(100vh - 65px - 65px)",  # Altura total menos navbar y footer
                 padding_y=Size.DEFAULT.value,        # Padding vertical consistente
             ),

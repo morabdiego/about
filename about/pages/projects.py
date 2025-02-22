@@ -3,7 +3,7 @@ from about.components.navbar import navbar
 from about.components.footer import footer
 from about.components.markdown_text import markdown_text
 from about.constants import MAX_WIDTH
-from about.styles.colors import AltTextColor
+from about.styles.colors import AltColor
 
 def projects() -> rx.Component:
     return rx.box(
@@ -19,7 +19,7 @@ def projects() -> rx.Component:
                 min_height="calc(100vh - 60px - 60px)",
             ),
             width="100%",
-            background=AltTextColor.BACKGROUND.value
+            background=AltColor.BACKGROUND.value
         ),
         footer(),
         width="100%",

@@ -1,75 +1,74 @@
 import reflex as rx
-from about.styles.colors import TextColor, AltTextColor
 from about.styles.styles import Size
-from about.state import State
+
+class FormState(rx.State):
+
+    @rx.event
+    def submit(self, form_data):
+        return rx.toast(form_data)
 
 def contact_form() -> rx.Component:
-    return rx.vstack(
-        rx.heading(
-            "Let's Work Together",
-            color=AltTextColor.PRIMARY.value,
-            font_size=Size.VERY_BIG.value,
-            margin_bottom=Size.BIG.value,
-        ),
-        rx.text(
-            "Feel free to reach out for collaborations or just a friendly hello",
-            color=AltTextColor.PRIMARY.value,
-            font_size=Size.DEFAULT.value,
-            margin_bottom=Size.VERY_BIG.value,
-        ),
-        rx.vstack(
-            rx.input(
-                placeholder="Name",
-                value=State.name,
-                on_change=State.set_name,
-                padding=Size.DEFAULT.value,
-                margin_bottom=Size.DEFAULT.value,
+    return rx.card(
+        rx.form(
+            rx.hstack(
+                rx.vstack(
+                    rx.heading(
+                        "Contact Me!",
+                        margin_bottom=Size.BIG.value
+                    )
+                ),
                 width="100%",
-                height="75px",
-                color=TextColor.PRIMARY.value,
-                border_color=TextColor.SECONDARY.value,
-                _placeholder={"color": TextColor.PRIMARY.value},
+                justify_content="center",
+                align_items="center"
             ),
-            rx.input(
-                placeholder="Email",
-                type_="email",
-                value=State.email,
-                on_change=State.set_email,
-                padding=Size.DEFAULT.value,
-                margin_bottom=Size.DEFAULT.value,
-                width="100%",
-                height="75px",
-                color=TextColor.PRIMARY.value,
-                border_color=TextColor.SECONDARY.value,
-                _placeholder={"color": TextColor.PRIMARY.value},
+            rx.vstack(
+                rx.text(
+                    "Name ",
+                    rx.text.span("*", color="red"),
+                ),
+                rx.input(
+                    name="name",
+                    required=True,
+                    margin_bottom=Size.DEFAULT.value,
+                ),
+                align="center",
+                spacing="4"  # Changed from Size.SMALL.value
             ),
-            rx.text_area(
-                placeholder="Message",
-                value=State.message,
-                on_change=State.set_message,
-                padding=Size.DEFAULT.value,
-                margin_bottom=Size.DEFAULT.value,
-                min_height="200px",  # Increased height
-                width="100%",
-                color=TextColor.PRIMARY.value,
-                border_color=TextColor.SECONDARY.value,
-                _placeholder={"color": TextColor.PRIMARY.value},
+            rx.vstack(
+                rx.text(
+                    "Email ",
+                    rx.text.span("*", color="red"),
+                ),
+                rx.input(
+                    name="email",
+                    type="email",
+                    required=True,
+                    margin_bottom=Size.DEFAULT.value,
+                ),
+                align="center",
+                spacing="4",  # Changed from Size.SMALL.value
             ),
-            rx.button(
-                "Send Message",
-                on_click=State.handle_submit,
-                bg=TextColor.SECONDARY.value,
-                color=AltTextColor.PRIMARY.value,
-                padding=Size.DEFAULT.value,
-                width="100%",
-                height=Size.VERY_BIG.value,  # Made button taller
-                _hover={"opacity": 0.8},
+            rx.vstack(
+                rx.text("Message"),
+                rx.text_area(
+                    name="message",
+                    margin_bottom=Size.DEFAULT.value,
+                    min_height="150px",
+                ),
+                align="center",
+                spacing="4",  # Changed from Size.SMALL.value
             ),
-            align_items="start",
-            spacing="4",
+            rx.vstack(
+                rx.button(
+                "Send",
+                type="submit",
+                margin_top=Size.DEFAULT.value,
+                ),
+                align="center",
+            ),
+            on_submit=FormState.submit,
+            spacing="6",  # Changed from Size.MEDIUM.value
             width="100%",
-            max_width="800px",
-            margin_x="auto",
-            padding=Size.VERY_BIG.value,
-        ),
+            padding=Size.BIG.value,
+        )
     )
