@@ -4,7 +4,7 @@ from .colors import Color, TextColor
 from .fonts import Font
 
 class Size(Enum):
-    SMALL = "0.8em"
+    SMALL = "0.7em"
     DEFAULT = "1em"
     MEDIUM = "1.5em"
     BIG = "2em",
