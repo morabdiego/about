@@ -1,3 +1,4 @@
+.web
 *.py[cod]
 assets/external/
 *.db

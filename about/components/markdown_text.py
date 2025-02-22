@@ -31,7 +31,6 @@ def markdown_text(content: str) -> rx.Component:
                 }
             }
         ),
-        # background=AltTextColor.BACKGROUND.value,
         width="100%",
         padding_x=[
             Size.DEFAULT.value,

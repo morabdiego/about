@@ -4,7 +4,6 @@ from about.components.footer import footer
 from about.components.hero import hero
 from about.pages.projects import projects
 from about.pages.contact import contact
-from about.constants import AUTHOR
 
 def index() -> rx.Component:
     return rx.box(
