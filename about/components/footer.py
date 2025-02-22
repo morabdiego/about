@@ -11,7 +11,7 @@ def footer() -> rx.Component:
                 rx.text(
                     COPYRIGHT,
                     color=TextColor.PRIMARY.value,
-                    font_size=Size.DEFAULT.value,
+                    font_size=Size.SMALL.value,
                     white_space="nowrap",
                 ),
                 spacing="8",
@@ -40,7 +40,7 @@ def footer() -> rx.Component:
                     ) for text, url, icon in SOCIAL_LINKS
                 ],
                 spacing="8",
-                padding_x=Size.MEDIUM.value,
+                padding_x=Size.SMALL.value,
             ),
             width="100%",
             max_width=FULL_WIDTH,

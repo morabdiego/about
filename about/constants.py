@@ -2,7 +2,7 @@ from datetime import datetime
 
 # Social Media URLs
 GITHUB_URL = "https://github.com/morabdiego"
-LINKEDIN_URL = "https://www.linkedin.com/in/mora-diego/"
+LINKEDIN_URL = "https://www.linkedin.com/in/morabdiego/"
 
 # Page Information
 AUTHOR = "DIEGO MORA"
@@ -18,8 +18,8 @@ NAV_LINKS = [
 
 # Social Links with icons
 SOCIAL_LINKS = [
-    ("GITHUB", GITHUB_URL, "ico_github.png"),    # Removido /assets/
-    ("LINKEDIN", LINKEDIN_URL, "ico_linkedin.png")
+    ("/morabdiego", GITHUB_URL, "ico_github.png"),    # Removido /assets/
+    ("/morabdiego", LINKEDIN_URL, "ico_linkedin.png")
 ]
 
 # Layout

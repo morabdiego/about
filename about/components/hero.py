@@ -9,13 +9,13 @@ def hero() -> rx.Component:
             rx.hstack(
                 rx.vstack(
                     rx.heading(
-                        "ECONOMIST",
+                        "DIEGO MORA",
                         color=AltTextColor.PRIMARY.value,
                         font_size=[Size.VERY_BIG.value, Size.VERY_BIG.value, Size.VERY_BIG.value],
                         padding_top=Size.DEFAULT.value,  # Reducido el padding superior
                     ),
                     rx.heading(
-                        "& DEVELOPER",
+                        "ECONOMIST & DEVELOPER",
                         color=AltTextColor.ACCENT.value,
                         font_size=[Size.VERY_BIG.value, Size.VERY_BIG.value, Size.VERY_BIG.value],
                     ),
@@ -30,6 +30,7 @@ def hero() -> rx.Component:
                         color=AltTextColor.PRIMARY.value,
                         font_size=Size.DEFAULT.value,
                         padding_top=Size.SMALL.value,
+                        font_weight="bold",
                     ),
                     align_items="flex-start",
                     flex="1",
