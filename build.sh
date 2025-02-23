@@ -11,9 +11,9 @@ reflex init
 reflex export --frontend-only
 
 # Create docs directory if it doesn't exist
-rm -rf docs
+rm -rf public
 
 # Move the exported files to docs
-unzip -o frontend.zip -d docs/
+unzip -o frontend.zip -d public/
 
 rm frontend.zip
