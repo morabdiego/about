@@ -20,5 +20,3 @@ rm frontend.zip
 
 # Add .nojekyll file
 touch docs/.nojekyll
-
-deactivate
