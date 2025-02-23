@@ -17,6 +17,3 @@ rm -rf docs
 unzip -o frontend.zip -d docs/
 
 rm frontend.zip
-
-# Add .nojekyll file
-touch docs/.nojekyll
