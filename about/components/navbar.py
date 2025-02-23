@@ -2,6 +2,7 @@ import reflex as rx
 from about.styles.colors import Color, TextColor
 from about.styles.styles import Size
 from about.constants import NAV_LINKS, FULL_WIDTH
+from about.components.lang import language_switch
 
 def navbar() -> rx.Component:
     return rx.vstack(
@@ -18,6 +19,7 @@ def navbar() -> rx.Component:
                 spacing="8",
                 padding_x=Size.MEDIUM.value,
             ),
+            language_switch(),
             width="100%",
             max_width=FULL_WIDTH,
             margin_x="auto",
@@ -29,5 +31,7 @@ def navbar() -> rx.Component:
             z_index="999",
             top="0",
             backdrop_filter="blur(10px)",
+            justify_content="space-between",  # Añadido para separar los elementos
+            align_items="center",  # Añadido para centrar verticalmente
         )
     )
