@@ -20,12 +20,17 @@ def footer() -> rx.Component:
             rx.hstack(
                 *[
                     rx.hstack(
-                        rx.image(
-                            src=f"/{icon}",
-                            width="20px",
-                            height="20px",
-                            margin_right="2",
-                            filter="invert(1)",
+                        rx.link(  # Wrap image in link
+                            rx.image(
+                                src=f"/{icon}",
+                                width="20px",
+                                height="20px",
+                                margin_right="2",
+                                filter="invert(1)",
+                                _hover={"opacity": 0.8},  # Add hover effect
+                            ),
+                            href=url,
+                            is_external=True,
                         ),
                         rx.link(
                             text,
@@ -35,7 +40,7 @@ def footer() -> rx.Component:
                             is_external=True,
                         ),
                         spacing="2",
-                        align_items="center",  # Centra verticalmente los elementos
+                        align_items="center",
                     ) for text, url, icon in SOCIAL_LINKS
                 ],
                 spacing="8",

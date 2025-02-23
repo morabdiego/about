@@ -3,11 +3,11 @@ from datetime import datetime
 # Social Media URLs
 GITHUB_URL = "https://github.com/morabdiego"
 LINKEDIN_URL = "https://www.linkedin.com/in/morabdiego/"
-GMAIL_URL = "https://mailto:morabdiego@gmail.com"
+GMAIL_URL = "morabdiego@gmail.com"
 INSTAGRAM_URL = "https://www.instagram.com/morabdiego/"
 
 # Page Information
-AUTHOR = "DIEGO MORA"
+AUTHOR = "Diego Mora"
 YEAR = str(datetime.now().year)
 COPYRIGHT = f"Created by {AUTHOR} with Reflex, {YEAR} ©"
 
@@ -19,7 +19,7 @@ NAV_LINKS = [
 
 # Social Links with icons
 SOCIAL_LINKS = [
-    ("morabdiego@gmail.com", GMAIL_URL, "ico_email.png"),
+    ("morabdiego@gmail.com", f"mailto:{GMAIL_URL}", "ico_email.png"),
     ("/morabdiego", LINKEDIN_URL, "ico_linkedin.png"),
     ("/morabdiego", GITHUB_URL, "ico_github.png"),
     ("/morabdiego", INSTAGRAM_URL, "ico_instagram.png"),
