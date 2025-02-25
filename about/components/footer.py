@@ -1,8 +1,8 @@
 import reflex as rx
 from about.styles.colors import Color, TextColor
 from about.styles.styles import Size
-from about.constants import get_copyright, SOCIAL_LINKS, FULL_WIDTH
-from about.state import State
+from about.constants import COPYRIGHT_EN, SOCIAL_LINKS, FULL_WIDTH
+# from about.state import State  # Commented out state import
 
 def footer() -> rx.Component:
     return rx.vstack(
@@ -43,9 +43,9 @@ def footer() -> rx.Component:
                 gap="4",
                 width="100%",
             ),
-            # Copyright text aligned to the right
+            # Copyright text aligned to the right (using static English version)
             rx.text(
-                get_copyright(State.is_spanish),
+                COPYRIGHT_EN,  # Changed from get_copyright(State.is_spanish)
                 color=TextColor.PRIMARY.value,
                 font_size=Size.SMALL.value,
                 white_space="nowrap",
@@ -64,3 +64,15 @@ def footer() -> rx.Component:
             align_items="center",
         )
     )
+
+"""
+# Dynamic version (commented out)
+from about.state import State
+from about.constants import get_copyright
+
+# Inside the component:
+rx.text(
+    get_copyright(State.is_spanish),
+    ...
+)
+"""

@@ -1,9 +1,9 @@
 import reflex as rx
 from about.styles.colors import Color, TextColor
 from about.styles.styles import Size
-from about.constants import get_nav_links, FULL_WIDTH
-from about.components.lang import language_switch
-from about.state import State
+from about.constants import NAV_LINKS_EN, FULL_WIDTH
+# from about.components.lang import language_switch  # Commented out language switch
+# from about.state import State  # Commented out state import
 
 def nav_item(text: str, url: str) -> rx.Component:
     return rx.link(
@@ -17,17 +17,14 @@ def navbar() -> rx.Component:
     return rx.vstack(
         rx.hstack(
             rx.hstack(
-                rx.foreach(
-                    get_nav_links(State.is_spanish),
-                    lambda item: nav_item(item[0], item[1])
-                ),
+                *[
+                    nav_item(text, url) for text, url in NAV_LINKS_EN
+                ],
                 spacing="4",  # Fixed spacing value
                 padding_x=["0", Size.SMALL.value, Size.DEFAULT.value, Size.MEDIUM.value],
-                #flex_direction=["column", "row", "row", "row"],
                 align_items="center",
                 gap="4",  # Add consistent gap
             ),
-            language_switch(),
             width="100%",
             max_width=FULL_WIDTH,
             margin_x="auto",
@@ -41,7 +38,23 @@ def navbar() -> rx.Component:
             backdrop_filter="blur(10px)",
             justify_content="space-between",
             align_items="center",
-            #flex_direction=["row", "row", "row", "row"],
             gap="4",  # Add consistent gap
         )
     )
+
+"""
+# Dynamic version (commented out)
+from about.components.lang import language_switch
+from about.state import State
+from about.constants import get_nav_links
+
+# Inside navbar():
+rx.hstack(
+    rx.foreach(
+        get_nav_links(State.is_spanish),
+        lambda item: nav_item(item[0], item[1])
+    ),
+    language_switch(),
+    ...
+)
+"""

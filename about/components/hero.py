@@ -1,9 +1,9 @@
 import reflex as rx
 from about.styles.colors import AltColor, AltTextColor
 from about.styles.styles import Size
-from about.constants import MAX_WIDTH, get_about_content
+from about.constants import MAX_WIDTH
 from about.styles.markdown import MARKDOWN_STYLES
-from about.state import State
+# from about.state import State  # Commented out state import
 
 def hero() -> rx.Component:
     return rx.box(
@@ -26,7 +26,7 @@ def hero() -> rx.Component:
                     ),
                     rx.box(  # Markdown content wrapper
                         rx.markdown(
-                            get_about_content(State.is_spanish),
+                            open("assets/content/about-EN.md").read(),  # Static English content
                             component_map=MARKDOWN_STYLES["component_map"],
                             css=MARKDOWN_STYLES["base"],
                         ),
@@ -54,3 +54,15 @@ def hero() -> rx.Component:
         ),
         width="100%",
     )
+
+"""
+# Dynamic version (commented out)
+from about.state import State
+from about.constants import get_about_content
+
+# Inside the markdown component:
+rx.markdown(
+    get_about_content(State.is_spanish),
+    ...
+)
+"""
