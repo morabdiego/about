@@ -5,20 +5,15 @@ from about.styles.styles import Size
 
 def language_switch() -> rx.Component:
     return rx.hstack(
-        rx.switch(
-            is_checked=State.is_spanish,
-            on_change=State.toggle_language,
-            color_scheme="green",
-        ),
-        rx.text(
-            rx.cond(
+        rx.segmented_control.root(
+            rx.segmented_control.item("EN", value="EN"),
+            rx.segmented_control.item("ES", value="ES"),
+            value=rx.cond(
                 State.is_spanish,
                 "ES",
                 "EN"
             ),
-            color=TextColor.PRIMARY.value,
-            font_size="14px",
-            margin_left="0.5em",
+            on_change=State.toggle_language,
         ),
         margin_right=Size.MEDIUM.value,
     )

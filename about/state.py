@@ -2,10 +2,8 @@ import reflex as rx
 
 class State(rx.State):
     """The app state."""
-    
-    # Add language state
-    is_spanish: bool = True
-    
+    is_spanish: bool = False  # Default state is English
+
     def toggle_language(self):
-        """Toggle between Spanish and English."""
+        """Toggle between English and Spanish."""
         self.is_spanish = not self.is_spanish
