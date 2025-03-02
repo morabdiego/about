@@ -1,15 +1,40 @@
 import reflex as rx
 from enum import Enum
-from .colors import Color, TextColor
-from .fonts import Font
+
+class Color(Enum):
+    """Main color scheme - Dark theme (Navbar & Footer)"""
+    BACKGROUND = "#1e1e1e"
+    PRIMARY = "#f0eedc"
+    SECONDARY = "#64b692"
+    ACCENT = "#64b692"
+
+class TextColor(Enum):
+    """Text colors for dark theme"""
+    PRIMARY = "#f0eedc"
+    SECONDARY = "#64b692"
+    ACCENT = "#64b692"
+
+class AltColor(Enum):
+    """Alternative color scheme - Light theme (Content sections)"""
+    BACKGROUND = "#f0eedc"
+    PRIMARY = "#1e1e1e"
+    SECONDARY = "#64b692"
+    ACCENT = "#64b692"
+
+class AltTextColor(Enum):
+    """Text colors for light theme"""
+    PRIMARY = "#1e1e1e"
+    SECONDARY = "#64b692"
+    ACCENT = "#64b692"
+    UNEXPECTED = "#9b4d4d"
 
 class Size(Enum):
     SMALL = "0.7em"
     DEFAULT = "1em"
     MEDIUM = "1.5em"
-    BIG = "2em",
-    VERY_BIG = "3em",
-    HUGE = "20em"
+    BIG = "2em"
+    VERY_BIG = "4em"
+    HUGE = "16em"
 
 STYLESHEETS = [
     "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"

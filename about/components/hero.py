@@ -1,8 +1,7 @@
 import reflex as rx
-from about.styles.colors import AltColor, AltTextColor
-from about.styles.styles import Size
+from about.styles.styles import Size, AltColor, AltTextColor
 from about.constants import MAX_WIDTH
-from about.styles.markdown import MARKDOWN_STYLES
+from about.components.markdown import MARKDOWN_STYLES
 # from about.state import State  # Commented out state import
 
 def hero() -> rx.Component:
@@ -22,7 +21,7 @@ def hero() -> rx.Component:
                         width=["150px", "175px", "200px", "200px"],  # Responsive sizes
                         height=["150px", "175px", "200px", "200px"],  # Keep 1:1 ratio
                         margin_y=Size.VERY_BIG.value,
-                        margin_x="auto",
+                        margin_x="auto",  # Center the image horizontally
                     ),
                     rx.box(  # Markdown content wrapper
                         rx.markdown(

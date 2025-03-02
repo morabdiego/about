@@ -2,11 +2,11 @@ import reflex as rx
 from about.components.navbar import navbar
 from about.components.footer import footer
 from about.constants import MAX_WIDTH
-from about.styles.colors import AltColor, AltTextColor
-from about.styles.styles import Size
-from about.styles.markdown import MARKDOWN_STYLES
+from about.styles.styles import Size, AltColor, AltTextColor
+from about.components.markdown import MARKDOWN_STYLES
 # from about.state import State  # Commented out state import
 
+@rx.page(route="/publications", title="morabdiego | Publications")
 def publications() -> rx.Component:
     return rx.box(
         navbar(),
