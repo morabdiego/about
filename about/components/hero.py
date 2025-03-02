@@ -46,7 +46,7 @@ def hero() -> rx.Component:
                 ],
                 align_items="center",
                 padding_y=Size.VERY_BIG.value,
-                min_height="calc(100vh - 153px)",
+                min_height="calc(100vh - 150px)",
             ),
             width="100%",
             background=AltColor.BACKGROUND.value,

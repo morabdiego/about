@@ -1,6 +1,7 @@
 import reflex as rx
 from about.styles.styles import Color, TextColor, Size
 from about.constants import NAV_LINKS_EN
+from about.components.ant_components import float_button
 
 
 def nav_item(text: str, url: str) -> rx.Component:
@@ -14,6 +15,7 @@ def nav_item(text: str, url: str) -> rx.Component:
 def navbar() -> rx.Component:
     return rx.vstack(
         rx.hstack(
+            float_button(),
             rx.hstack(
                 *[
                     nav_item(text, url) for text, url in NAV_LINKS_EN
