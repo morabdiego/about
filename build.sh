@@ -10,7 +10,7 @@
 
 # Build the project
 reflex init
-API_URL=morabdiego-about.up.railway.app reflex export --frontend-only
+reflex export --frontend-only
 
 # Create docs directory if it doesn't exist
 rm -rf public
