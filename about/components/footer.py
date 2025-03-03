@@ -1,6 +1,14 @@
 import reflex as rx
 from about.styles.styles import Size, Color, TextColor
-from about.constants import COPYRIGHT_EN, SOCIAL_LINKS, FULL_WIDTH
+from about.constants import SOCIAL_LINKS, FULL_WIDTH, COPYRIGHT_EN, COPYRIGHT_ES
+from about.state import State
+
+def get_copyright() -> str:
+    return rx.cond(
+        State.is_spanish,
+        COPYRIGHT_ES,
+        COPYRIGHT_EN
+    )
 
 def social_link_item(text: str, url: str, icon: str) -> rx.Component:
     return rx.hstack(
@@ -43,7 +51,7 @@ def footer() -> rx.Component:
             width="100%",
         ),
         rx.text(
-            COPYRIGHT_EN,
+            get_copyright(),
             color=TextColor.PRIMARY.value,
             font_size=Size.SMALL.value,
             white_space="nowrap",
@@ -60,15 +68,3 @@ def footer() -> rx.Component:
         spacing="4",
         align_items="center",
     )
-
-"""
-# Dynamic version (commented out)
-from about.state import State
-from about.constants import get_copyright
-
-# Inside the component:
-rx.text(
-    get_copyright(State.is_spanish),
-    ...
-)
-"""
