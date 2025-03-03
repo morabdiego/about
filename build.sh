@@ -1,16 +1,16 @@
 #!/bin/bash
 
-# Activate virtual environment
-source .venv/bin/activate
+# # Activate virtual environment
+# source .venv/bin/activate
 
-pip install --upgrade pip
+# pip install --upgrade pip
 
-# Install dependencies
-pip install -r requirements.txt
+# # Install dependencies
+# pip install -r requirements.txt
 
 # Build the project
 reflex init
-reflex export --frontend-only
+API_URL=morabdiego-about.up.railway.app reflex export --frontend-only
 
 # Create docs directory if it doesn't exist
 rm -rf public

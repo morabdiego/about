@@ -27,10 +27,10 @@ NAV_LINKS_EN = [
     ["Publications", "/publications"],
 ]
 
-# NAV_LINKS_ES = [
-#     ["Inicio", "/"],
-#     ["Publicaciones", "/publications"],
-# ]
+NAV_LINKS_ES = [
+    ["Inicio", "/"],
+    ["Publicaciones", "/publications"],
+]
 
 # def get_nav_links(is_spanish: bool):
 #     """Get navigation links based on language."""
