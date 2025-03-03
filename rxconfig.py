@@ -3,9 +3,8 @@ import reflex as rx
 config = rx.Config(
     app_name="about",
     api_url="https://morabdiego-api-about.up.railway.app",
-    show_built_with_reflex=False,
-    cors_allowed_origins=[
-        "https://morabdiego-about.vercel.app/",
-        "http://localhost:3000"
-        ],
+    frontend_port=3000,
+    backend_port=8000,
+    frontend_path="",
+    backend_path="",
 )

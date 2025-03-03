@@ -16,6 +16,8 @@ https://github.com/mouredev/python-web
     05 - Hosting nativo
     06 - Backend
     07 - Docker
+    08 - CORS
+    09 - GitHub Actions
 
 
 
@@ -28,8 +30,7 @@ https://github.com/mouredev/python-web
 **Sin iniciar**
 
 
-    08 - CORS
-    09 - GitHub Actions
+
     10 - Infraestructura
     11 - API
     12 - Estados
