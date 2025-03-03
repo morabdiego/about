@@ -1,10 +1,12 @@
 #!/bin/bash
 
-# Activate virtual environment
-source .venv/bin/activate
+# # Activate virtual environment
+# source .venv/bin/activate
 
-# Install dependencies
-pip install -r requirements.txt
+# pip install --upgrade pip
+
+# # Install dependencies
+# pip install -r requirements.txt
 
 # Build the project
 reflex init
