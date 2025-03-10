@@ -10,6 +10,8 @@ def nav_item(text: str, url: str) -> rx.Component:
         text,
         href=url,
         color=TextColor.PRIMARY.value,
+        font_weight="bold",
+        # font_size=Size.MEDIUM.value,
         _hover={"color": TextColor.SECONDARY.value},
     )
 

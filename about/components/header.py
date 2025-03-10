@@ -10,7 +10,7 @@ def profile_image() -> rx.Component:
         border_radius="50%",
         object_fit="cover",
         box_shadow="lg",
-        margin_right=Size.MEDIUM.value,
+        margin_right=Size.VERY_BIG.value,
     )
 
 def social_link_item(url: str, icon: str) -> rx.Component:
@@ -35,14 +35,12 @@ def header() -> rx.Component:
                 font_size=Size.VERY_BIG.value,  # Responsive font size
                 color=AltTextColor.UNEXPECTED.value,
                 font_weight="bold",
-                # text_align="center"
             ),
             rx.text(
                 "@morabdiego",
                 font_size=Size.BIG.value,  # Responsive font size
                 color=AltTextColor.PRIMARY.value,
                 font_weight="bold",
-                # text_align="center"
             ),
             rx.hstack(
                 *[
