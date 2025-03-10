@@ -18,6 +18,8 @@ https://github.com/mouredev/python-web
     07 - Docker
     08 - CORS
     09 - GitHub Actions
+    10 - Infraestructura
+    11 - API
 
 
 
@@ -31,8 +33,7 @@ https://github.com/mouredev/python-web
 
 
 
-    10 - Infraestructura
-    11 - API
+
     12 - Estados
     13 - Integración API
     14 - Datos en tiempo real
