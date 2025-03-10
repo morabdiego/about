@@ -10,46 +10,22 @@ def get_copyright() -> str:
         COPYRIGHT_EN
     )
 
-def social_link_item(text: str, url: str, icon: str) -> rx.Component:
-    return rx.hstack(
-        rx.link(
-            rx.image(
-                src=f"/{icon}",
-                width="20px",
-                height="20px",
-                margin_right="2",
-                filter="invert(1)",
-                _hover={"opacity": 0.8},
-            ),
-            href=url,
-            is_external=True,
-        ),
-        rx.link(
-            text,
-            href=url,
-            color=TextColor.PRIMARY.value,
-            _hover={"color": TextColor.SECONDARY.value},
-            is_external=True,
-        ),
-        spacing="2",
-        align_items="center",
-    )
 
 def footer() -> rx.Component:
     return rx.vstack(
-        rx.flex(
-            *[
-                social_link_item(text, url, icon) for text, url, icon in SOCIAL_LINKS
-            ],
-            spacing="5",
-            padding_x=Size.SMALL.value,
-            align_items="center",
-            justify_content="center",
-            flex_direction=["column", "column", "column", "row"],
-            flex_wrap="wrap",
-            gap="4",
-            width="100%",
-        ),
+        # rx.flex(
+        #     *[
+        #         social_link_item(text, url, icon) for text, url, icon in SOCIAL_LINKS
+        #     ],
+        #     spacing="5",
+        #     padding_x=Size.SMALL.value,
+        #     align_items="center",
+        #     justify_content="center",
+        #     flex_direction=["column", "column", "column", "row"],
+        #     flex_wrap="wrap",
+        #     gap="4",
+        #     width="100%",
+        # ),
         rx.text(
             get_copyright(),
             color=TextColor.PRIMARY.value,

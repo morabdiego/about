@@ -26,10 +26,10 @@ NAV_LINKS_ES = [
 
 # Social Links with icons
 SOCIAL_LINKS = [
-    ("morabdiego@gmail.com", f"mailto:{GMAIL_URL}", "ico_email.png"),
-    ("/morabdiego", LINKEDIN_URL, "ico_linkedin.png"),
-    ("/morabdiego", GITHUB_URL, "ico_github.png"),
-    ("@morabdiego", INSTAGRAM_URL, "ico_instagram.png"),
+    (f"mailto:{GMAIL_URL}", "ico_email.png"),
+    (LINKEDIN_URL, "ico_linkedin.png"),
+    (GITHUB_URL, "ico_github.png"),
+    (INSTAGRAM_URL, "ico_instagram.png"),
 ]
 
 # Layout
