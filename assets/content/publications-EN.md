@@ -4,22 +4,22 @@
 
 ### Published
 
-* Mora Benitez, D. (2023). *Relevamiento de condiciones habitacionales en barrios populares: El rol del Observatorio Villero de La Poderosa en la producción de estadísticas comunitarias*. Revista Idelcoop, 239, 128-140. [→ View](https://www.idelcoop.org.ar/sites/www.idelcoop.org.ar/files/revista/articulos/pdf/experiencias_1_1.pdf)
+- Mora Benitez, D. (2023). *Survey on Housing Conditions in Informal Settlements: The Role of the Villero Observatory of La Poderosa in the Production of Community Statistics*. Revista Idelcoop, 239, 128-140. [→ View](https://www.idelcoop.org.ar/sites/www.idelcoop.org.ar/files/revista/articulos/pdf/experiencias_1_1.pdf)
 
 ### In Production
 
-* Cappa, A., Cejas Marcovecchio, M., Miño, L., & Mora Benitez, D. (2025). *Desafíos y avances en la urbanización de barrios populares*. FES, OCEPP & OVLP
+- Cappa, A., Cejas Marcovecchio, M., Miño, L., & Mora Benitez, D. (2025). *Challenges and Advances in the Urbanization of Informal Settlements*. FES, OCEPP & OVLP
 
 ### Collaboration
 
-* Dávolos, P. (2023). *La situación de pobreza en los barrios populares: Estudio cualitativo*. La Poderosa y UNICEF. [→ View](https://www.unicef.org/argentina/media/17071/file/Estudio%20cualitativo:%20la%20situaci%C3%B3n%20de%20la%20pobreza%20en%20barrios%20populares.pdf)
+- Dávolos, P. (2023). *The Poverty Situation in Informal Settlements: A Qualitative Study*. La Poderosa and UNICEF. [→ View](https://www.unicef.org/argentina/media/17071/file/Estudio%20cualitativo:%20la%20situaci%C3%B3n%20de%20la%20pobreza%20en%20barrios%20populares.pdf)
 
-## Presentations in Symposia and Conference
+## Presentations in Symposia and Conferences
 
-### Exhibitor
+### Speaker
 
-* Mora Benitez, D. (2023, octubre 27). Métodos de medición de la pobreza: La Canasta Villera [Conferencia]. Facultad de Trabajo Social, Universidad Nacional de Entre Ríos, Argentina.
+- Mora Benitez, D. (2023, October 27). *Methods for Measuring Poverty: The Informal Settlements Basket* [Conference]. Faculty of Social Work, National University of Entre Ríos, Argentina.
 
 ### Moderator
 
-* "Conversatorio de Economía y Trabajo Cooperativo". Ciudad de 
+- *Conversation on Economy and Cooperative Work*. 3rd National Meeting of Cooperatives of La Poderosa. Cabildo of the City of Córdoba, Córdoba, Argentina.

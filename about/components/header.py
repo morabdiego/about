@@ -1,5 +1,5 @@
 import reflex as rx
-from about.styles.styles import Size, AltTextColor
+from about.styles.styles import Size, AltTextColor  # Import ACCENT color
 from about.constants import SOCIAL_LINKS, MAX_WIDTH
 
 def profile_image() -> rx.Component:
@@ -10,19 +10,28 @@ def profile_image() -> rx.Component:
         border_radius="50%",
         object_fit="cover",
         box_shadow="lg",
-        margin_right=Size.MEDIUM.value,
+        margin_right=Size.VERY_BIG.value,
     )
 
-def social_link_item(url: str, icon: str) -> rx.Component:
-    return rx.hstack(
-        rx.link(
-            rx.image(
-                src=f"/{icon}",
-                width="30px",
-                height="30px"
+def social_link_item(url: str, icon: str, description: str) -> rx.Component:
+    return rx.hover_card.root(
+        rx.hover_card.trigger(
+            rx.link(
+                rx.image(
+                    src=f"/{icon}",
+                    width="30px",
+                    height="30px",
+                ),
+                href=url,
+                is_external=True,
             ),
-            href=url,
-            is_external=True,
+        ),
+        rx.hover_card.content(
+            rx.text(
+                description,
+                color=AltTextColor.ACCENT.value,
+                font_size=Size.DEFAULT.value,
+            ),
         ),
     )
 
@@ -35,20 +44,19 @@ def header() -> rx.Component:
                 font_size=Size.VERY_BIG.value,  # Responsive font size
                 color=AltTextColor.UNEXPECTED.value,
                 font_weight="bold",
-                # text_align="center"
             ),
             rx.text(
                 "@morabdiego",
                 font_size=Size.BIG.value,  # Responsive font size
                 color=AltTextColor.PRIMARY.value,
                 font_weight="bold",
-                # text_align="center"
             ),
             rx.hstack(
                 *[
-                    social_link_item(url, icon) for url, icon in SOCIAL_LINKS
+                    social_link_item(url, icon, text) for url, icon, text in SOCIAL_LINKS
                 ],
                 spacing="6",
+                align_items="center",
             ),
             spacing="1"  # Numeric spacing between elements
         ),

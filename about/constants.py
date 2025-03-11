@@ -6,6 +6,7 @@ GITHUB_URL = "https://github.com/morabdiego"
 LINKEDIN_URL = "https://www.linkedin.com/in/morabdiego/"
 GMAIL_URL = "morabdiego@gmail.com"
 INSTAGRAM_URL = "https://www.instagram.com/morabdiego/"
+CV_URL = "https://drive.google.com/file/d/1lwOTeUCNgI_H3bU7rwT6sjUkp0IwfIqo/view?usp=sharing"
 
 # Page Information
 AUTHOR = "Diego Mora"
@@ -24,12 +25,13 @@ NAV_LINKS_ES = [
     ["Publicaciones", "/publications"],
 ]
 
-# Social Links with icons
+# Social Links with icons and descriptions
 SOCIAL_LINKS = [
-    (f"mailto:{GMAIL_URL}", "ico_email.png"),
-    (LINKEDIN_URL, "ico_linkedin.png"),
-    (GITHUB_URL, "ico_github.png"),
-    (INSTAGRAM_URL, "ico_instagram.png"),
+    (CV_URL, "ico_cv.svg", "Download my CV"),
+    (f"mailto:{GMAIL_URL}", "ico_email.png", "Email me at morabdiego@gmail.com"),
+    (LINKEDIN_URL, "ico_linkedin.png", "Connect with me on LinkedIn"),
+    (GITHUB_URL, "ico_github.png", "Check out my projects"),
+    (INSTAGRAM_URL, "ico_instagram.png", "Follow me on Instagram")
 ]
 
 # Layout

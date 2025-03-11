@@ -34,8 +34,10 @@ class Size(Enum):
     MEDIUM = "1.5em"
     BIG = "2em"
     VERY_BIG = "4em"
+    LITTLE_HUGE = "10.4em"
+    MID_HUGE = "12em"
     HUGE = "16em"
 
 STYLESHEETS = [
-    "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+    "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
 ]
