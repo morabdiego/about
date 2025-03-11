@@ -7,4 +7,5 @@ config = rx.Config(
     backend_port=8000,
     frontend_path="",
     backend_path="",
+    show_built_with_reflex=False
 )
