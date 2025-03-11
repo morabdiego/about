@@ -1,5 +1,5 @@
 import reflex as rx
-from about.styles.styles import Size, AltTextColor
+from about.styles.styles import Size, AltTextColor  # Import ACCENT color
 from about.constants import SOCIAL_LINKS, MAX_WIDTH
 
 def profile_image() -> rx.Component:
@@ -19,7 +19,8 @@ def social_link_item(url: str, icon: str) -> rx.Component:
             rx.image(
                 src=f"/{icon}",
                 width="30px",
-                height="30px"
+                height="30px",
+                _hover={"color": AltTextColor.ACCENT.value},  # Add hover effect
             ),
             href=url,
             is_external=True,

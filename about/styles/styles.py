@@ -34,6 +34,8 @@ class Size(Enum):
     MEDIUM = "1.5em"
     BIG = "2em"
     VERY_BIG = "4em"
+    LITTLE_HUGE = "10.4em"
+    MID_HUGE = "12em"
     HUGE = "16em"
 
 STYLESHEETS = [

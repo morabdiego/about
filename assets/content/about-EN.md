@@ -1,22 +1,5 @@
-## Profile
+Hi! I’m Diego Mora, an economist and data analyst, {pending dedication}. I hold a Bachelor's degree in Economics from the University of Buenos Aires and {current education}.
 
-I am Diego Mora, a passionate software engineer with extensive experience in developing innovative solutions. My expertise spans across various programming languages and frameworks, enabling me to tackle complex challenges and deliver high-quality software products.
+My experience includes roles in {pending central experience}. Currently, I coordinate the Observatorio Villero at [La Poderosa](https://www.instagram.com/lagargantapoderosa/), where I design socio-economic surveys on issues such as poverty and housing conditions in informal settlements across Argentina. I am also particularly interested in analyzing poverty from a multidimensional perspective and assessing the impact of public policies.
 
-## Experience
-
-With a strong background in software development, I have worked on numerous projects that have honed my skills in both frontend and backend technologies. My ability to adapt to new technologies and methodologies has been a key factor in my success as a software engineer.
-
-## Skills
-
-- Proficient in Python, JavaScript, and Java
-- Experienced with frameworks such as React, Angular, and Django
-- Strong understanding of software development principles and best practices
-- Excellent problem-solving and analytical skills
-
-## Education
-
-I hold a degree in Computer Science, which has provided me with a solid foundation in software engineering principles and practices.
-
-## Contact
-
-Feel free to reach out to me on [LinkedIn](https://www.linkedin.com/in/morabdiego) or [GitHub](https://github.com/morabdiego) for any professional inquiries or collaborations.
+You can get in touch with me and find my CV [here →](https://drive.google.com/file/d/1lwOTeUCNgI_H3bU7rwT6sjUkp0IwfIqo/view?usp=sharing) or at the top of this page.
