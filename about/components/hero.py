@@ -11,6 +11,7 @@ def hero() -> rx.Component:
                 rx.vstack(
                     header(),
                     markdown_content(ABOUT_MD_ES, ABOUT_MD_EN),
+                    spacing="9",
                 ),
                 width="100%",
                 max_width=MAX_WIDTH,

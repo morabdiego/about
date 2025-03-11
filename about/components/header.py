@@ -13,17 +13,25 @@ def profile_image() -> rx.Component:
         margin_right=Size.VERY_BIG.value,
     )
 
-def social_link_item(url: str, icon: str) -> rx.Component:
-    return rx.hstack(
-        rx.link(
-            rx.image(
-                src=f"/{icon}",
-                width="30px",
-                height="30px",
-                _hover={"color": AltTextColor.ACCENT.value},  # Add hover effect
+def social_link_item(url: str, icon: str, description: str) -> rx.Component:
+    return rx.hover_card.root(
+        rx.hover_card.trigger(
+            rx.link(
+                rx.image(
+                    src=f"/{icon}",
+                    width="30px",
+                    height="30px",
+                ),
+                href=url,
+                is_external=True,
             ),
-            href=url,
-            is_external=True,
+        ),
+        rx.hover_card.content(
+            rx.text(
+                description,
+                color=AltTextColor.ACCENT.value,
+                font_size=Size.DEFAULT.value,
+            ),
         ),
     )
 
@@ -45,9 +53,10 @@ def header() -> rx.Component:
             ),
             rx.hstack(
                 *[
-                    social_link_item(url, icon) for url, icon in SOCIAL_LINKS
+                    social_link_item(url, icon, text) for url, icon, text in SOCIAL_LINKS
                 ],
                 spacing="6",
+                align_items="center",
             ),
             spacing="1"  # Numeric spacing between elements
         ),

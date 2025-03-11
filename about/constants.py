@@ -25,13 +25,13 @@ NAV_LINKS_ES = [
     ["Publicaciones", "/publications"],
 ]
 
-# Social Links with icons
+# Social Links with icons and descriptions
 SOCIAL_LINKS = [
-    (CV_URL, "ico_cv.svg"),
-    (f"mailto:{GMAIL_URL}", "ico_email.png"),
-    (LINKEDIN_URL, "ico_linkedin.png"),
-    (GITHUB_URL, "ico_github.png"),
-    (INSTAGRAM_URL, "ico_instagram.png"),
+    (CV_URL, "ico_cv.svg", "Download my CV"),
+    (f"mailto:{GMAIL_URL}", "ico_email.png", "Email me at morabdiego@gmail.com"),
+    (LINKEDIN_URL, "ico_linkedin.png", "Connect with me on LinkedIn"),
+    (GITHUB_URL, "ico_github.png", "Check out my projects"),
+    (INSTAGRAM_URL, "ico_instagram.png", "Follow me on Instagram")
 ]
 
 # Layout
