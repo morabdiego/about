@@ -1,17 +1,15 @@
-FROM python:3.11
+FROM python:3.12
 
 WORKDIR /app
 
 COPY . .
 
 ENV VIRTUAL_ENV=/app/.venv_docker
-
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
-RUN python -m venv $VIRTUAL_ENV
+# Configurar el entorno virtual y las dependencias
+RUN python -m venv $VIRTUAL_ENV \
+    && pip install --upgrade pip \
+    && pip install --no-cache-dir -r requirements.txt
 
-RUN pip install --upgrade pip
-
-RUN pip install --no-cache-dir -r requirements.txt
-
-CMD reflex run --env prod --backend-only
+CMD ["reflex", "run", "--env", "prod", "--backend-only"]

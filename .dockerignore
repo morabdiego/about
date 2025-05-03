@@ -1,2 +1,5 @@
-.web
+.web/
+.venv/
+__pycache__/
+.states/
 __pycache__/*
