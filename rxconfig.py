@@ -1,8 +1,9 @@
 import reflex as rx
+import os
 
 config = rx.Config(
     app_name="about",
-    api_url="https://morabdiego-api-about.up.railway.app",
+    api_url="https://api-about-morabdiego-6671.onrender.com",
     frontend_port=3000,
     backend_port=8000,
     frontend_path="",
