@@ -1,14 +1,14 @@
-.PHONY: build run clean
+.PHONY: install run export clean
 
-build:
-	python -m venv .venv
-	. .venv/bin/activate && pip install -r requirements.txt
+install:
+	uv sync
 
 run:
-	. .venv/bin/activate && reflex run
+	uv run reflex run --frontend-only
+
+export:
+	uv run reflex export --frontend-only --no-zip
 
 clean:
-	rm -rf .venv/
-	rm -rf .states/
-	rm -rf .web/
+	rm -rf .states/ .web/ frontend.zip
 	find . -name "__pycache__" -type d -exec rm -rf {} +

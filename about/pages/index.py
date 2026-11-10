@@ -1,13 +1,34 @@
 import reflex as rx
 from about.components.navbar import navbar
 from about.components.hero import hero
+from about.components.cv_sections import (
+    experience_section,
+    education_section,
+    skills_section,
+    publications_section,
+)
 from about.components.footer import footer
+from about.state import is_spanish
 
-@rx.page(route="/", title="morabdiego | About") # Agregar preview
+
+@rx.page(
+    route="/",
+    title="Diego Mora (@morabdiego) | Economista & Analista de Datos",
+    description="Portfolio y CV de Diego J. Mora Benitez — Economista (UBA) y Analista de Datos especializado en investigación socioeconómica y políticas públicas.",
+)
 def index() -> rx.Component:
     return rx.box(
+        is_spanish,
         navbar(),
-        hero(),
+        rx.el.main(
+            hero(),
+            experience_section(),
+            education_section(),
+            skills_section(),
+            publications_section(),
+            style={"width": "100%"},
+        ),
         footer(),
-        width="100%"
+        width="100%",
+        min_height="100vh",
     )

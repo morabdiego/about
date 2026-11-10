@@ -1,33 +1,22 @@
 import reflex as rx
-from about.styles.styles import Size, AltColor
-from about.constants import MAX_WIDTH, ABOUT_MD_EN, ABOUT_MD_ES
+from about.styles.styles import AltColor
+from about.constants import MAX_WIDTH
 from about.components.header import header
-from about.components.markdown_content import markdown_content
+
 
 def hero() -> rx.Component:
-    return rx.box(
-        rx.vstack(
-            rx.box(
-                rx.vstack(
-                    header(),
-                    markdown_content(ABOUT_MD_ES, ABOUT_MD_EN),
-                    spacing="9",
-                ),
-                width="100%",
-                max_width=MAX_WIDTH,
-                margin_x="auto",
-                padding_x=[
-                    Size.DEFAULT.value,
-                    Size.MEDIUM.value,
-                    Size.VERY_BIG.value,
-                    Size.VERY_BIG.value
-                ],
-                align_items="center",
-                padding_y=Size.VERY_BIG.value,
-                min_height="calc(100vh - 110px)",
-            ),
+    return rx.el.section(
+        rx.box(
+            header(),
             width="100%",
-            background=AltColor.BACKGROUND.value,
+            max_width=MAX_WIDTH,
+            margin_x="auto",
+            padding_x=["1.25rem", "2rem", "3rem"],
+            padding_y=["3rem", "4.5rem", "5.5rem"],
         ),
-        width="100%",
+        id="about",
+        style={
+            "width": "100%",
+            "background": AltColor.BACKGROUND.value,
+        },
     )

@@ -1,51 +1,48 @@
-# about - curso
+# Diego J. Mora Benitez (`@morabdiego`) — Portfolio & CV
 
-Esta rama es para testear funcionalidades del siguiente curso:  
+Portfolio personal y CV interactivo *one-page* (bilingüe **ES / EN**) desarrollado en Python con **[Reflex](https://reflex.dev/)** (`>=0.10.1`) y gestionado con **[uv](https://docs.astral.sh/uv/)**.
 
-https://github.com/mouredev/python-web  
+Diseñado para compilarse como **frontend 100% estático** (sin necesidad de servidor backend gracias al uso de `ClientStateVar` y `enable_state=False`) para su publicación directa en **GitHub Pages**.
 
-### Básico: 
+---
 
-### Avanzado:
+## Características principales
 
-**Completado**
+- **One-Page Portfolio & CV moderno**:
+  - **Sobre mí / Hero**: Presentación profesional, métricas destacadas, enlaces a redes y descarga directa de CV en PDF (ES / EN).
+  - **Experiencia Profesional**: Línea de tiempo detallada con responsabilidades y herramientas utilizadas.
+  - **Educación y Formación Continua**: Grado universitario (Lic. en Economía - UBA) y cursos de especialización (*Fundar*, *Ecofeminita*).
+  - **Habilidades y Herramientas**: Stack técnico organizado por Ciencia de Datos, Visualización e Investigación.
+  - **Publicaciones y Congresos**: Artículos publicados, investigaciones colaborativas y ponencias.
+- **Selector de idioma instantáneo (ES / EN)** ejecutado 100% en el navegador (`ClientStateVar`).
+- **Edición centralizada de datos**: Todos los textos y secciones del CV se encuentran en [`about/data.py`](about/data.py).
 
-    01 - Refactorización 
-    02 - Actualización datos
-    03 - Router
-    05 - Hosting nativo
-    06 - Backend
-    07 - Docker
-    08 - CORS
-    09 - GitHub Actions
-    10 - Infraestructura
-    11 - API
+---
 
+## Desarrollo local con `uv`
 
+1. **Instalar dependencias**:
+   ```bash
+   uv sync
+   ```
 
+2. **Ejecutar servidor de desarrollo**:
+   ```bash
+   uv run reflex run --frontend-only
+   # o usando make:
+   make run
+   ```
 
-**Realizado con pendientes**
+3. **Exportar build estático**:
+   ```bash
+   uv run reflex export --frontend-only --no-zip
+   # El sitio estático se genera en .web/build/client/
+   ```
 
-    04 - Componentes React
-        Falta personalizar el FloatButton
+---
 
-**Sin iniciar**
+## Despliegue en GitHub Pages
 
+El repositorio incluye el workflow [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) que compila automáticamente el frontend estático con `uv` y lo publica en **GitHub Pages** en cada `push` a la rama `main`.
 
-
-
-    12 - Estados
-    13 - Integración API
-    14 - Datos en tiempo real
-    15 - Supabase y PostgreSQL
-    16 - JSON serializable
-    17 - Base de datos
-    18 - Feature flags
-    19 - Query PostgreSQL
-    20 - Cálculo de fechas
-    21 - Migración RadixUI
-    22 - Carga de datos
-    23 - Cliente / Servidor
-    24 - Animaciones
-    25 - Otras características
-    Próximos pasos
+> **Configuración en GitHub**: En tu repositorio ve a **Settings → Pages → Build and deployment** y en **Source** selecciona **GitHub Actions**.
