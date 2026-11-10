@@ -127,10 +127,15 @@ def highlight_card(item: dict) -> rx.Component:
         "border_top": f"4px solid {Color.ACCENT.value}",
         "padding": ["1.35rem", "1.6rem"],
     }
+    metric_text = (
+        t(item["metric"], item["metric_en"])
+        if "metric_en" in item
+        else item["metric"]
+    )
     return rx.box(
         rx.vstack(
             rx.text(
-                item["metric"],
+                metric_text,
                 font_family=Font.HEADING.value,
                 font_size=["1.65rem", "1.9rem"],
                 font_weight="800",

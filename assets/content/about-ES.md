@@ -1,5 +1,5 @@
-¡Hola! Soy Diego J. Mora Benitez, economista graduado en la Universidad de Buenos Aires (UBA) y analista de datos especializado en proyectos de investigación socioeconómica y políticas públicas.
+¡Hola! Soy Diego J. Mora Benitez, economista (UBA) especializado en econometría aplicada (SARIMAX, diferencias en diferencias, cointegración), analítica fiscal e investigación socioeconómica.
 
-He liderado equipos multidisciplinarios diseñando metodologías y herramientas para la recolección, procesamiento y visualización de datos. Actualmente coordino el Observatorio Villero de [La Poderosa](https://www.instagram.com/lagargantapoderosa/), donde diseño relevamientos socioeconómicos a nivel nacional sobre pobreza multidimensional y condiciones habitacionales en barrios populares de Argentina. También me desempeñé como columnista de datos y economía en TV (*La Ley de la Selva*, C5N).
+Actualmente asesoro a la Dirección Ejecutiva de ARBA en estimación de recaudación subnacional y fiscalización basada en datos, y coordino el Observatorio Villero de [La Poderosa](https://www.instagram.com/lagargantapoderosa/), donde dirijo relevamientos federales a hogares de barrios populares y administro [Observadata](https://github.com/ObservatorioVillero/observadata). Trabajo el ciclo completo del dato —captura, pipelines reproducibles, modelado y tableros para la toma de decisiones— con Python, Polars, R, SQL y Git.
 
-Puedes ponerte en contacto conmigo y ver mi CV [aquí →](https://drive.google.com/file/d/1h1djoliw5Gp4R2rFO0Ex4H8-WqHjdst-/view?usp=sharing) o al inicio de esta página.
+Puedes ponerte en contacto conmigo y ver mi CV al inicio de esta página.

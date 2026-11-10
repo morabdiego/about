@@ -10,6 +10,8 @@ def asset_url(path: str) -> str:
 
 # Social Media & Contact URLs
 GITHUB_URL = "https://github.com/morabdiego"
+OBSERVADATA_URL = "https://github.com/ObservatorioVillero/observadata"
+OBSERVATORIO_WEB_URL = "https://observatoriovillero.lapoderosa.org.ar/"
 LINKEDIN_URL = "https://www.linkedin.com/in/morabdiego/"
 GMAIL_ADDRESS = "morabdiego@gmail.com"
 GMAIL_URL = f"mailto:{GMAIL_ADDRESS}"
@@ -32,9 +34,9 @@ COPYRIGHT_ES = f"© {YEAR} {AUTHOR}. Desarrollado con Reflex."
 NAV_SECTIONS = [
     ("#about", "Sobre mí", "About"),
     ("#experience", "Experiencia", "Experience"),
-    ("#education", "Educación y Formación", "Education & Training"),
+    ("#education", "Formación", "Education & Training"),
     ("#skills", "Habilidades", "Skills"),
-    ("#publications", "Publicaciones", "Publications"),
+    ("#publications", "Publicaciones", "Projects & Publications"),
 ]
 
 # Social Links with icons and bilingual tooltips

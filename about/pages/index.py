@@ -13,8 +13,8 @@ from about.state import is_spanish
 
 @rx.page(
     route="/",
-    title="Diego Mora (@morabdiego) | Economista & Analista de Datos",
-    description="Portfolio y CV de Diego J. Mora Benitez — Economista (UBA) y Analista de Datos especializado en investigación socioeconómica y políticas públicas.",
+    title="Diego Mora (@morabdiego) | Economista · Analista de Datos y Política Fiscal",
+    description="Portfolio y CV de Diego J. Mora Benitez — Economista (UBA) especializado en econometría aplicada, analítica fiscal e investigación socioeconómica.",
 )
 def index() -> rx.Component:
     return rx.box(

@@ -47,7 +47,7 @@ def section_heading(
                 font_size="0.96rem",
                 font_weight="500",
                 color=AltTextColor.MUTED.value,
-                max_width="680px",
+                max_width="720px",
                 line_height="1.65",
             ),
         ),
@@ -65,7 +65,7 @@ def section_heading(
     )
 
 
-def tag_pill(label: str, variant: str = "green") -> rx.Component:
+def tag_pill(label_es: str, label_en: str = "", variant: str = "green") -> rx.Component:
     bg = (
         AltColor.ACCENT_SOFT.value
         if variant == "green"
@@ -81,9 +81,10 @@ def tag_pill(label: str, variant: str = "green") -> rx.Component:
         if variant == "green"
         else "rgba(155, 77, 77, 0.22)"
     )
+    text_content = t(label_es, label_en) if label_en else label_es
     return rx.box(
         rx.text(
-            label,
+            text_content,
             font_family=Font.BODY.value,
             font_size="0.76rem",
             font_weight="600",
@@ -126,6 +127,7 @@ def bullet_row(es_text: str, en_text: str) -> rx.Component:
 
 def experience_card(item: dict) -> rx.Component:
     bullets = list(zip(item["bullets_es"], item["bullets_en"]))
+    tags = list(zip(item["tags_es"], item["tags_en"]))
     card_css = {
         **CARD_STYLE,
         "border_left": (
@@ -194,7 +196,7 @@ def experience_card(item: dict) -> rx.Component:
                         ),
                         rx.flex(
                             rx.text(
-                                item["organization"],
+                                t(item["organization_es"], item["organization_en"]),
                                 font_family=Font.BODY.value,
                                 font_weight="700",
                                 font_size="0.92rem",
@@ -257,7 +259,7 @@ def experience_card(item: dict) -> rx.Component:
             ),
             # Tags
             rx.flex(
-                *[tag_pill(tag, "green") for tag in item["tags"]],
+                *[tag_pill(es, en, "green") for es, en in tags],
                 spacing="2",
                 wrap="wrap",
                 style={"gap": "0.55rem", "paddingTop": "0.4rem"},
@@ -279,8 +281,8 @@ def experience_section() -> rx.Component:
                 "Career Path",
                 "Experiencia Profesional",
                 "Professional Experience",
-                "Coordinación de proyectos de investigación socioeconómica, ciencia de datos aplicada y comunicación en medios.",
-                "Coordinating socioeconomic research projects, applied data science, and media data communication.",
+                "Econometría aplicada, estimación de recaudación e inteligencia fiscal en ARBA, dirección de investigaciones federales en el Observatorio Villero y divulgación económica.",
+                "Applied econometrics, revenue forecasting and fiscal intelligence at ARBA, nationwide research leadership at the Socioeconomic Observatory, and economic outreach.",
             ),
             rx.vstack(
                 *[experience_card(item) for item in EXPERIENCE],
@@ -423,6 +425,7 @@ def education_degree_card(item: dict) -> rx.Component:
 
 
 def training_card(item: dict) -> rx.Component:
+    tags = list(zip(item["tags_es"], item["tags_en"]))
     return rx.box(
         rx.vstack(
             rx.hstack(
@@ -490,7 +493,7 @@ def training_card(item: dict) -> rx.Component:
                 line_height="1.65",
             ),
             rx.flex(
-                *[tag_pill(tag, "green") for tag in item["tags"]],
+                *[tag_pill(es, en, "green") for es, en in tags],
                 spacing="2",
                 wrap="wrap",
                 style={"gap": "0.55rem", "paddingTop": "0.4rem"},
@@ -514,11 +517,11 @@ def education_section() -> rx.Component:
                 "Academic Background",
                 "Educación y Formación Continua",
                 "Education & Continuous Training",
-                "Formación universitaria de grado en Economía y especialización continua en programación, ciencia de datos y visualización.",
-                "University degree in Economics and continuous specialization in programming, data science, and visualization.",
+                "Formación universitaria de grado en Economía (UBA), Diplomatura en Análisis de Datos para el Sector Público (IPAP – UTN La Plata) y especialización continua.",
+                "University degree in Economics (UBA), Diploma in Data Analysis for the Public Sector (IPAP – UTN La Plata), and continuous specialization.",
             ),
             rx.vstack(
-                # Grado Universitario
+                # Grado Universitario y Diplomatura
                 *[education_degree_card(item) for item in EDUCATION],
                 # Subheader for Formación Continua / Especialización
                 rx.hstack(
@@ -526,7 +529,7 @@ def education_section() -> rx.Component:
                     rx.text(
                         t(
                             "Cursos de Especialización y Formación Continua",
-                            "Specialization Courses & Continuous Training",
+                            "Additional Training & Specialization Courses",
                         ),
                         font_family=Font.HEADING.value,
                         font_size="1.15rem",
@@ -565,6 +568,7 @@ def education_section() -> rx.Component:
 
 
 def skill_category_card(item: dict) -> rx.Component:
+    skills = list(zip(item["items_es"], item["items_en"]))
     return rx.box(
         rx.vstack(
             rx.hstack(
@@ -610,7 +614,7 @@ def skill_category_card(item: dict) -> rx.Component:
                 *[
                     rx.box(
                         rx.text(
-                            skill,
+                            t(es, en),
                             font_family=Font.BODY.value,
                             font_size="0.8rem",
                             font_weight="600",
@@ -625,7 +629,7 @@ def skill_category_card(item: dict) -> rx.Component:
                             "border": f"1px solid {AltColor.BORDER_STRONG.value}",
                         },
                     )
-                    for skill in item["items"]
+                    for es, en in skills
                 ],
                 spacing="2",
                 wrap="wrap",
@@ -650,8 +654,8 @@ def skills_section() -> rx.Component:
                 "Technical Capabilities",
                 "Habilidades y Herramientas",
                 "Skills & Toolkit",
-                "Combinación de herramientas estadísticas, programación, visualización y gestión de equipos en territorio.",
-                "Combining statistical tools, programming, data visualization, and field team management.",
+                "Dominio del ciclo completo del dato: econometría aplicada, ingeniería de datos (ETL y APIs), operativos estadísticos en campo, visualización y ciencia abierta.",
+                "Full-cycle data capabilities: applied econometrics, data engineering (ETL & APIs), field survey operations, visualization, and open science.",
             ),
             rx.grid(
                 *[skill_category_card(item) for item in SKILLS],
@@ -676,9 +680,59 @@ def skills_section() -> rx.Component:
     )
 
 
+def publication_link_button(link: dict, idx: int = 0) -> rx.Component:
+    is_primary = idx == 0
+    return rx.el.a(
+        rx.hstack(
+            rx.text(
+                t(link["label_es"], link["label_en"]),
+                font_family=Font.BODY.value,
+                font_size="0.8rem",
+                font_weight="700",
+            ),
+            rx.icon("arrow-up-right", size=14),
+            spacing="1",
+            align="center",
+        ),
+        href=link["url"],
+        target="_blank",
+        rel="noopener noreferrer",
+        style={
+            "display": "inline-flex",
+            "align_items": "center",
+            "padding": "0.42rem 0.9rem",
+            "border_radius": "999px",
+            "background": (
+                AltColor.ACCENT_SOFT.value
+                if is_primary
+                else AltColor.BACKGROUND.value
+            ),
+            "color": (
+                AltTextColor.SECONDARY.value
+                if is_primary
+                else AltTextColor.PRIMARY.value
+            ),
+            "border": (
+                "1px solid rgba(43, 122, 88, 0.25)"
+                if is_primary
+                else f"1px solid {AltColor.BORDER_STRONG.value}"
+            ),
+            "text_decoration": "none",
+            "transition": "all 0.2s ease",
+        },
+        _hover={
+            "background": Color.ACCENT.value,
+            "color": Color.BACKGROUND_DEEP.value,
+            "border_color": Color.ACCENT.value,
+            "transform": "translateY(-1px)",
+        },
+    )
+
+
 def publication_card(item: dict) -> rx.Component:
     is_green = item["accent"] == "green"
-    has_url = item["url"] != ""
+    links = item.get("links", [])
+    has_description = bool(item.get("description_es"))
     return rx.box(
         rx.vstack(
             rx.hstack(
@@ -747,42 +801,88 @@ def publication_card(item: dict) -> rx.Component:
                 font_weight="600",
                 color=AltTextColor.PRIMARY.value,
             ),
+            rx.cond(
+                has_description,
+                rx.text(
+                    t(item.get("description_es", ""), item.get("description_en", "")),
+                    font_family=Font.BODY.value,
+                    font_size="0.88rem",
+                    font_weight="400",
+                    color=AltTextColor.MUTED.value,
+                    line_height="1.62",
+                ),
+            ),
             rx.text(
                 t(item["venue_es"], item["venue_en"]),
                 font_family=Font.BODY.value,
-                font_size="0.85rem",
+                font_size="0.82rem",
                 font_style="italic",
-                font_weight="400",
+                font_weight="500",
                 color=AltTextColor.MUTED.value,
-                line_height="1.55",
+                line_height="1.5",
             ),
             rx.cond(
-                has_url,
+                len(links) > 0,
+                rx.flex(
+                    *[
+                        publication_link_button(link, idx)
+                        for idx, link in enumerate(links)
+                    ],
+                    spacing="2",
+                    wrap="wrap",
+                    style={"gap": "0.55rem", "paddingTop": "0.35rem"},
+                ),
+            ),
+            spacing="3",
+            align="start",
+            width="100%",
+            height="100%",
+        ),
+        style=CARD_STYLE,
+        width="100%",
+        height="100%",
+    )
+
+
+def publications_section() -> rx.Component:
+    return rx.el.section(
+        rx.box(
+            section_heading(
+                "Proyectos, Relevamientos y Producción Académica",
+                "Projects, Surveys & Academic Output",
+                "Proyectos, Investigaciones y Publicaciones",
+                "Projects, Research & Publications",
+                "Relevamientos socioeconómicos federales, plataformas interactivas, repositorios de ciencia abierta (Observadata) y publicaciones del Observatorio Villero.",
+                "Nationwide socioeconomic surveys, interactive platforms, open science repositories (Observadata), and publications from the Socioeconomic Observatory.",
+            ),
+            rx.flex(
                 rx.el.a(
                     rx.hstack(
+                        rx.icon("globe", size=16),
                         rx.text(
-                            t(item["link_label_es"], item["link_label_en"]),
+                            t(
+                                "Sitio oficial del Observatorio Villero",
+                                "Observatorio Villero Official Website",
+                            ),
                             font_family=Font.BODY.value,
-                            font_size="0.82rem",
+                            font_size="0.84rem",
                             font_weight="700",
                         ),
                         rx.icon("arrow-up-right", size=15),
-                        spacing="1",
+                        spacing="2",
                         align="center",
                     ),
-                    href=item["url"],
+                    href="https://observatoriovillero.lapoderosa.org.ar/",
                     target="_blank",
                     rel="noopener noreferrer",
                     style={
                         "display": "inline-flex",
                         "align_items": "center",
-                        "padding": "0.45rem 0.95rem",
+                        "padding": "0.55rem 1.1rem",
                         "border_radius": "999px",
-                        "background": AltColor.ACCENT_SOFT.value,
-                        "color": AltTextColor.SECONDARY.value,
-                        "border": "1px solid rgba(43, 122, 88, 0.25)",
+                        "background": Color.BACKGROUND.value,
+                        "color": Color.PRIMARY.value,
                         "text_decoration": "none",
-                        "margin_top": "0.35rem",
                         "transition": "all 0.2s ease",
                     },
                     _hover={
@@ -791,26 +891,46 @@ def publication_card(item: dict) -> rx.Component:
                         "transform": "translateY(-1px)",
                     },
                 ),
-            ),
-            spacing="3",
-            align="start",
-            width="100%",
-        ),
-        style=CARD_STYLE,
-        width="100%",
-    )
-
-
-def publications_section() -> rx.Component:
-    return rx.el.section(
-        rx.box(
-            section_heading(
-                "Producción Académica y Congresos",
-                "Academic Output & Conferences",
-                "Publicaciones y Presentaciones",
-                "Publications & Presentations",
-                "Artículos, investigaciones colaborativas y exposiciones en congresos sobre pobreza multidimensional, hábitat popular y economía.",
-                "Articles, collaborative studies, and conference presentations on multidimensional poverty, informal settlements, and economics.",
+                rx.el.a(
+                    rx.hstack(
+                        rx.icon("database", size=16),
+                        rx.text(
+                            t(
+                                "Observadata · Repositorio de Datos Abiertos (GitHub)",
+                                "Observadata · Open Data Repository (GitHub)",
+                            ),
+                            font_family=Font.BODY.value,
+                            font_size="0.84rem",
+                            font_weight="700",
+                        ),
+                        rx.icon("arrow-up-right", size=15),
+                        spacing="2",
+                        align="center",
+                    ),
+                    href="https://github.com/ObservatorioVillero/observadata",
+                    target="_blank",
+                    rel="noopener noreferrer",
+                    style={
+                        "display": "inline-flex",
+                        "align_items": "center",
+                        "padding": "0.55rem 1.1rem",
+                        "border_radius": "999px",
+                        "background": AltColor.ACCENT_SOFT.value,
+                        "color": AltTextColor.SECONDARY.value,
+                        "border": "1px solid rgba(43, 122, 88, 0.25)",
+                        "text_decoration": "none",
+                        "transition": "all 0.2s ease",
+                    },
+                    _hover={
+                        "background": Color.ACCENT.value,
+                        "color": Color.BACKGROUND_DEEP.value,
+                        "transform": "translateY(-1px)",
+                    },
+                ),
+                spacing="3",
+                wrap="wrap",
+                align="center",
+                style={"gap": "0.75rem", "marginBottom": "1.75rem"},
             ),
             rx.grid(
                 *[publication_card(item) for item in PUBLICATIONS],

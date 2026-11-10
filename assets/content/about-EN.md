@@ -1,5 +1,5 @@
-Hi! I’m Diego J. Mora Benitez, an economist graduated from the University of Buenos Aires (UBA) and a data analyst specializing in socioeconomic research projects and public policy.
+Hi! I’m Diego J. Mora Benitez, an economist (University of Buenos Aires) specialized in applied econometrics (SARIMAX, difference-in-differences, cointegration), tax analytics, and socioeconomic research.
 
-I have led multidisciplinary teams designing methodologies and tools for data collection, processing, and visualization. Currently, I coordinate the Observatorio Villero at [La Poderosa](https://www.instagram.com/lagargantapoderosa/), where I design nationwide socioeconomic surveys on multidimensional poverty and housing conditions in informal settlements across Argentina. I have also worked as a data and economics TV columnist (*La Ley de la Selva*, C5N).
+I currently advise the Executive Directorate of ARBA, the Buenos Aires Province tax agency, on subnational revenue forecasting and data-driven tax enforcement, and coordinate the Socioeconomic Observatory at [La Poderosa](https://www.instagram.com/lagargantapoderosa/), where I lead nationwide household surveys in low-income neighborhoods and maintain [Observadata](https://github.com/ObservatorioVillero/observadata). I work across the full data cycle —collection, reproducible pipelines, modeling, and decision-support dashboards— using Python, Polars, R, SQL, and Git.
 
-You can get in touch with me and find my CV [here →](https://drive.google.com/file/d/1lwOTeUCNgI_H3bU7rwT6sjUkp0IwfIqo/view?usp=sharing) or at the top of this page.
+You can get in touch with me and find my CV at the top of this page.
